@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,9 +18,11 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/index', [UserController::class, 'Users'])->name('index');
-Route::get('/index1', [UserController::class, 'Orders'])->name('index1'); //route relevent to orders function
-Route::get('/index2', [UserController::class, 'Property'])->name('index2'); //route relevent to property function
-Route::get('/index3', [UserController::class, 'Property_aminities'])->name('index3'); //route relevent to property_aminities function
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/user', [UserController::class, 'Users'])->name('user');
+Route::get('/order', [UserController::class, 'Orders'])->name('order'); //route relevent to orders function
+Route::get('/property', [UserController::class, 'Property'])->name('property'); //route relevent to property function
+Route::get('/property_aminity', [UserController::class, 'Property_aminities'])->name('property_aminity'); //route relevent to property_aminities function
 
 
